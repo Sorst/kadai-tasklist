@@ -46,8 +46,14 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'status' => 'required|max:10',// 追加
+        ]);
+        
         //taskを作成
         $task = new Task;
+        $task->status = $request->status;// 追加
         $task->content = $request->content;
         $task->save();
         
@@ -98,9 +104,15 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'status' => 'required|max:10',// 追加
+        ]);
+        
         //idの値でtaskを検索して取得
         $task = Task::findOrFail($id);
         // taskを更新
+        $task->status = $request->status;// 追加
         $task->content = $request->content;
         $task->save();
         
