@@ -9,9 +9,16 @@
 
                 <div class="collapse navbar-collapse" id="nav-bar">
                     <ul class="navbar-nav mr-auto"></ul>
-                    <ul class="navbar-nav">
-                        {{-- task作成ページへのリンク --}}
-                        <li class="nav-item">{!! link_to_route('tasks.create', '新規taskの投稿', [], ['class' => 'nav-link']) !!}</li>
+                    <!--<ul class="navbar-nav">-->
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                    {{-- ユーザ登録ページへのリンク --}}
+                    <li>{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
+                    {{-- ログインページへのリンク --}}
+                    <li><a href="#">Login</a></li>
+                        
+                        <!--{{-- task作成ページへのリンク --}}-->
+                        <!--<li class="nav-item">{!! link_to_route('tasks.create', '新規taskの投稿', [], ['class' => 'nav-link']) !!}</li>-->
                     </ul>
                 </div>
             </nav>
